@@ -11,10 +11,13 @@ body {
   font-family: Arial, sans-serif;
   background: radial-gradient(circle at center, #111 0%, #000 100%);
   color: white;
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Glow background particles */
+/* Glow animation */
 body::before {
   content: "";
   position: absolute;
@@ -32,10 +35,8 @@ body::before {
 
 .container {
   text-align: center;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 2;
+  max-width: 400px;
   padding: 20px;
 }
 
@@ -50,10 +51,33 @@ body::before {
   opacity: 0.8;
 }
 
+.badge {
+  background: rgba(255,106,0,0.2);
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* 🔥 Center block */
+.center-box {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Countdown */
+.countdown {
+  font-size: 32px;
+  color: #ffb347;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
 /* Button */
 .btn {
-  display: inline-block;
-  margin-top: 25px;
   padding: 15px 35px;
   font-size: 18px;
   background: linear-gradient(45deg, #ff6a00, #ffb347);
@@ -68,23 +92,6 @@ body::before {
 .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #ff6a00;
-}
-
-/* Badge */
-.badge {
-  background: rgba(255,106,0,0.2);
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin-bottom: 15px;
-  font-size: 14px;
-}
-
-/* Countdown */
-.countdown {
-  margin-top: 15px;
-  font-size: 28px;
-  color: #ffb347;
 }
 </style>
 
@@ -115,12 +122,15 @@ fbq('track', 'PageView');
   <h1 class="title">New Online Experience 🎯</h1>
   <p class="subtitle">Premium Entertainment Platform</p>
 
-  <div class="countdown" id="countdown">03</div>
+  <!-- 🔥 Center section -->
+  <div class="center-box">
+    <div class="countdown" id="countdown">03</div>
 
-  <a href="https://dhakabaji.org" class="btn"
-     onclick="fbq('track', 'Lead');">
-     Join Now
-  </a>
+    <a href="https://dhakabaji.org" class="btn"
+       onclick="fbq('track', 'Lead');">
+       Join Now
+    </a>
+  </div>
 
 </div>
 
