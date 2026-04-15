@@ -17,20 +17,20 @@ body {
   align-items: center;
 }
 
-/* Glow animation */
+/* Glow animation (lighter for speed) */
 body::before {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,106,0,0.2) 0%, transparent 60%);
-  animation: move 6s infinite linear;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255,106,0,0.15) 0%, transparent 60%);
+  animation: move 8s infinite linear;
 }
 
 @keyframes move {
-  0% {transform: translate(-10%, -10%);}
-  50% {transform: translate(10%, 10%);}
-  100% {transform: translate(-10%, -10%);}
+  0% {transform: translate(-5%, -5%);}
+  50% {transform: translate(5%, 5%);}
+  100% {transform: translate(-5%, -5%);}
 }
 
 .container {
@@ -41,9 +41,9 @@ body::before {
 }
 
 .title {
-  font-size: 2.2rem;
+  font-size: 2rem;
   color: #ff6a00;
-  text-shadow: 0 0 10px #ff6a00, 0 0 30px #ff6a00;
+  text-shadow: 0 0 10px #ff6a00;
 }
 
 .subtitle {
@@ -60,23 +60,6 @@ body::before {
   font-size: 14px;
 }
 
-/* 🔥 Center block */
-.center-box {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Countdown */
-.countdown {
-  font-size: 32px;
-  color: #ffb347;
-  margin-bottom: 15px;
-  font-weight: bold;
-}
-
-/* Button */
 .btn {
   padding: 15px 35px;
   font-size: 18px;
@@ -86,12 +69,6 @@ body::before {
   text-decoration: none;
   font-weight: bold;
   box-shadow: 0 0 15px #ff6a00;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #ff6a00;
 }
 </style>
 
@@ -111,45 +88,31 @@ fbq('init', '1514808416887629');
 fbq('track', 'PageView');
 </script>
 
+<!-- 🔥 Instant Redirect -->
+<script>
+window.onload = function() {
+  fbq('track', 'Lead');
+  window.location.href = "https://dhakabaji.org";
+};
+</script>
+
 </head>
 
 <body>
 
 <div class="container">
-
   <div class="badge">🔥 Limited Access</div>
+  <h1 class="title">Redirecting...</h1>
+  <p class="subtitle">Please wait...</p>
 
-  <h1 class="title">New Online Experience 🎯</h1>
-  <p class="subtitle">Premium Entertainment Platform</p>
+  <br>
 
-  <!-- 🔥 Center section -->
-  <div class="center-box">
-    <div class="countdown" id="countdown">03</div>
-
-    <a href="https://dhakabaji.org" class="btn"
-       onclick="fbq('track', 'Lead');">
-       Join Now
-    </a>
-  </div>
-
+  <!-- Backup button -->
+  <a href="https://dhakabaji.org" class="btn"
+     onclick="fbq('track', 'Lead');">
+     Enter Now
+  </a>
 </div>
-
-<script>
-let time = 3;
-let countdown = document.getElementById("countdown");
-
-let interval = setInterval(()=>{
-  time--;
-  countdown.innerText = "0" + time;
-
-  if(time <= 0){
-    clearInterval(interval);
-
-    fbq('track', 'Lead');
-    window.location.href = "https://dhakabaji.org";
-  }
-},1000);
-</script>
 
 </body>
 </html>
