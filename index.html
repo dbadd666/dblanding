@@ -17,58 +17,21 @@ body {
   align-items: center;
 }
 
-/* Glow animation (lighter for speed) */
-body::before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  background: radial-gradient(circle, rgba(255,106,0,0.15) 0%, transparent 60%);
-  animation: move 8s infinite linear;
-}
-
-@keyframes move {
-  0% {transform: translate(-5%, -5%);}
-  50% {transform: translate(5%, 5%);}
-  100% {transform: translate(-5%, -5%);}
-}
-
 .container {
   text-align: center;
-  z-index: 2;
-  max-width: 400px;
-  padding: 20px;
 }
 
 .title {
-  font-size: 2rem;
   color: #ff6a00;
-  text-shadow: 0 0 10px #ff6a00;
-}
-
-.subtitle {
-  margin-top: 10px;
-  opacity: 0.8;
-}
-
-.badge {
-  background: rgba(255,106,0,0.2);
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 20px;
-  margin-bottom: 15px;
-  font-size: 14px;
 }
 
 .btn {
-  padding: 15px 35px;
-  font-size: 18px;
+  padding: 12px 25px;
   background: linear-gradient(45deg, #ff6a00, #ffb347);
   color: black;
-  border-radius: 40px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 0 15px #ff6a00;
 }
 </style>
 
@@ -92,7 +55,7 @@ fbq('track', 'PageView');
 <script>
 window.onload = function() {
   fbq('track', 'Lead');
-  window.location.href = "https://dhakabaji.org";
+  window.location.href = "https://dhakabaji.net/register?referral=ZGhha2FiYWppX2Nlb3NyazAx&language=bd";
 };
 </script>
 
@@ -101,14 +64,14 @@ window.onload = function() {
 <body>
 
 <div class="container">
-  <div class="badge">🔥 Limited Access</div>
   <h1 class="title">Redirecting...</h1>
-  <p class="subtitle">Please wait...</p>
+  <p>Please wait...</p>
 
   <br>
 
   <!-- Backup button -->
-  <a href="https://dhakabaji.org" class="btn"
+  <a href="https://dhakabaji.net/register?referral=ZGhha2FiYWppX2Nlb3NyazAx&language=bd"
+     class="btn"
      onclick="fbq('track', 'Lead');">
      Enter Now
   </a>
